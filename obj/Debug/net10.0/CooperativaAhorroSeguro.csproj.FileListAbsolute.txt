@@ -1,0 +1,15 @@
+C:\Users\Admin\Documents\GitHub\cooperativa-ahorro-seguro\bin\Debug\net10.0\CooperativaAhorroSeguro.exe
+C:\Users\Admin\Documents\GitHub\cooperativa-ahorro-seguro\bin\Debug\net10.0\CooperativaAhorroSeguro.deps.json
+C:\Users\Admin\Documents\GitHub\cooperativa-ahorro-seguro\bin\Debug\net10.0\CooperativaAhorroSeguro.runtimeconfig.json
+C:\Users\Admin\Documents\GitHub\cooperativa-ahorro-seguro\bin\Debug\net10.0\CooperativaAhorroSeguro.dll
+C:\Users\Admin\Documents\GitHub\cooperativa-ahorro-seguro\bin\Debug\net10.0\CooperativaAhorroSeguro.pdb
+C:\Users\Admin\Documents\GitHub\cooperativa-ahorro-seguro\obj\Debug\net10.0\CooperativaAhorroSeguro.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Documents\GitHub\cooperativa-ahorro-seguro\obj\Debug\net10.0\CooperativaAhorroSeguro.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\GitHub\cooperativa-ahorro-seguro\obj\Debug\net10.0\CooperativaAhorroSeguro.AssemblyInfo.cs
+C:\Users\Admin\Documents\GitHub\cooperativa-ahorro-seguro\obj\Debug\net10.0\CooperativaAhorroSeguro.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\cooperativa-ahorro-seguro\obj\Debug\net10.0\CooperativaAhorroSeguro.sourcelink.json
+C:\Users\Admin\Documents\GitHub\cooperativa-ahorro-seguro\obj\Debug\net10.0\CooperativaAhorroSeguro.dll
+C:\Users\Admin\Documents\GitHub\cooperativa-ahorro-seguro\obj\Debug\net10.0\refint\CooperativaAhorroSeguro.dll
+C:\Users\Admin\Documents\GitHub\cooperativa-ahorro-seguro\obj\Debug\net10.0\CooperativaAhorroSeguro.pdb
+C:\Users\Admin\Documents\GitHub\cooperativa-ahorro-seguro\obj\Debug\net10.0\CooperativaAhorroSeguro.genruntimeconfig.cache
+C:\Users\Admin\Documents\GitHub\cooperativa-ahorro-seguro\obj\Debug\net10.0\ref\CooperativaAhorroSeguro.dll
