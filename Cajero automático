@@ -1,0 +1,48 @@
+
+using System; namespace SistemaBancario { public class CajeroAutomatico { public static void
+EjecutarCajero() { string pinCorrecto =
+"1234"
+; int intentosRestantes = 3; bool autenticado = fals
+e; decimal saldoActual = 10000.00m; int contadorDepositos = 0; int contadorRetiros = 0; Console.Wr
+iteLine("
+==========================================
+"); Console.WriteLine(" SISTEMA DE CAJERO AUTOM
+ÁTICO - ATM "); Console.WriteLine("
+==========================================
+"); // 1, 2 y 3. Vali
+dación de PIN e Intentos while (intentosRestantes > 0) { Console.Write("Ingrese su PIN de 4 dígito
+s:
+"); string pinIngresado = Console.ReadLine(); if (pinIngresado == pinCorrecto) { autenticado =
+true; Console.WriteLine("\n¡Acceso concedido!\n"); break; } else { intentosRestantes--; Console.Wr
+iteLine($"PIN incorrecto. Le quedan {intentosRestantes} intentos.\n"); } } if (!autenticado) { Con
+sole.WriteLine("\n[BLOQUEO DE SEGURIDAD] Cuenta bloqueada tras 3 intentos.
+"); return; } // 4. Menú
+Principal de Operaciones int opcion = 0; while (opcion != 4) { Console.WriteLine("
+================
+==========================
+"); Console.WriteLine(" MENÚ PRINCIPAL "); Console.WriteLine("
+==========
+================================
+"); Console.WriteLine("1. Consultar saldo\n2. Depositar dinero\n3.
+Retirar dinero\n4. Salir"); Console.Write("\nSeleccione una opción (1-4):
+"); if (!int.TryParse(Co
+nsole.ReadLine(), out opcion)) { Console.WriteLine("\n[Error] Opción inválida.\n"); continue; } sw
+itch (opcion) { case 1: Console.WriteLine($"'\n-> Saldo actual: ${saldoActual:N2}\n"); break; case
+2: Console.Write("\nMonto a depositar: $"); if (decimal.TryParse(Console.ReadLine(), out decimal d
+eposito) && deposito > 0) { saldoActual += deposito; contadorDepositos++; Console.WriteLine($"[Éxi
+to] Depósito realizado. Nuevo saldo: ${saldoActual:N2}\n"); } else { Console.WriteLine("[Error] El
+depósito debe ser mayor a cero.\n"); } break; case 3: Console.Write("\nMonto a retirar: $"); if (d
+ecimal.TryParse(Console.ReadLine(), out decimal retiro) && retiro > 0) { if (retiro <= saldoActua
+l) { saldoActual -= retiro; contadorRetiros++; Console.WriteLine($"[Éxito] Retiro realizado. Nuevo
+saldo: ${saldoActual:N2}\n"); } else { Console.WriteLine("[Error] Fondos insuficientes.\n"); } } e
+lse { Console.WriteLine("[Error] El retiro debe ser mayor a cero.\n"); } break; case 4: // 7. Resu
+men final de la sesión Console.WriteLine("\n==========================================
+"); Console.
+WriteLine(" RESUMEN DE LA SESIÓN "); Console.WriteLine("
+=========================================
+=
+"); Console.WriteLine($"Total depósitos realizados: {contadorDepositos}"); Console.WriteLine($"To
+tal retiros realizados: {contadorRetiros}"); Console.WriteLine($"Saldo final en cuenta: ${saldoAct
+ual:N2}"); Console.WriteLine("
+==========================================
+"); break; } } } } }
