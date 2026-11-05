@@ -1,0 +1,66 @@
+using System;
+public class SimuladorPrestamosParte1
+{
+const decimal MontoMin = 5000m, MontoMax = 500000m;
+const int PlazoMin = 6, PlazoMax = 60;
+public static decimal LeerMonto()
+{
+while (true)
+{
+Console.Write("Monto del préstamo (RD$5,000 - RD$500,000): ");
+if (decimal.TryParse(Console.ReadLine(), out decimal m)
+&& m >= MontoMin && m <= MontoMax)
+return m;
+Console.WriteLine("Monto inválido. Intente de nuevo.");
+}
+}
+public static int LeerPlazo()
+{
+while (true)
+{
+Console.Write("Plazo en meses (6 - 60): ");
+if (int.TryParse(Console.ReadLine(), out int p)
+&& p >= PlazoMin && p <= PlazoMax)
+return p;
+Console.WriteLine("Plazo inválido. Intente de nuevo.");
+}
+}
+public static char LeerCategoria()
+{
+while (true)
+{
+Console.Write("Categoría del socio (A, B o C): ");
+string s = (Console.ReadLine() ?? "").Trim().ToUpper();
+if (s == "A" || s == "B" || s == "C")
+return s[0];
+Console.WriteLine("Categoría inválida. Use A, B o C.");
+}
+}
+public static decimal ObtenerTasaAnual(char categoria)
+{
+switch (categoria)
+{
+case 'A': return 12m;
+case 'B': return 15m;
+case 'C': return 18m;
+default: throw new ArgumentException("Categoría inválida");
+}
+}
+// Cuota fija = M * r / (1 - (1 + r)^-n), con r = tasa anual / 12
+public static decimal CalcularCuota(decimal monto, decimal tasaAnual, int plazo)
+{
+double r = (double)tasaAnual / 100.0 / 12.0;
+double cuota = (double)monto * r / (1 - Math.Pow(1 + r, -plazo));
+return Math.Round((decimal)cuota, 2);
+}
+{
+public static void Main()
+decimal monto = LeerMonto();
+int plazo = LeerPlazo();
+char cat = LeerCategoria();
+decimal tasa = ObtenerTasaAnual(cat);
+decimal cuota = CalcularCuota(monto, tasa, plazo);
+Console.WriteLine($"\nTasa anual: {tasa}%");
+Console.WriteLine($"Cuota mensual: RD${cuota:N2}");
+}
+}
